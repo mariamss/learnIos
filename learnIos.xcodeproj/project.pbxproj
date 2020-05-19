@@ -17,6 +17,7 @@
 		567F33172471D7B700D53999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567F33152471D7B700D53999 /* LaunchScreen.storyboard */; };
 		567F331A2471D7B700D53999 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F33192471D7B700D53999 /* main.m */; };
 		567F33242471D7B700D53999 /* learnIosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F33232471D7B700D53999 /* learnIosUITests.m */; };
+		56D02D442474904A003157B3 /* Programmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D02D432474904A003157B3 /* Programmer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		567F331F2471D7B700D53999 /* learnIosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = learnIosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		567F33232471D7B700D53999 /* learnIosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = learnIosUITests.m; sourceTree = "<group>"; };
 		567F33252471D7B700D53999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D02D432474904A003157B3 /* Programmer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Programmer.m; sourceTree = "<group>"; };
+		56D02D4524749067003157B3 /* Programmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Programmer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				567F33192471D7B700D53999 /* main.m */,
 				560CCFA524746EC0002557ED /* DetailViewController.h */,
 				560CCFA624746EC0002557ED /* DetailViewController.m */,
+				56D02D432474904A003157B3 /* Programmer.m */,
+				56D02D4524749067003157B3 /* Programmer.h */,
 			);
 			path = learnIos;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				567F33092471D7B500D53999 /* AppDelegate.m in Sources */,
 				567F331A2471D7B700D53999 /* main.m in Sources */,
 				560CCFA424746C9F002557ED /* SceneDelegate.m in Sources */,
+				56D02D442474904A003157B3 /* Programmer.m in Sources */,
 				560CCF7C24745B47002557ED /* TableViewCell.m in Sources */,
 				560CCF7924745B00002557ED /* TableViewController.m in Sources */,
 				560CCFA724746EC1002557ED /* DetailViewController.m in Sources */,

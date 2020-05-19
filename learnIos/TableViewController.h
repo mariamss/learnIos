@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TableViewCell.h"
-
+#import "Programmer.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TableViewController : UITableViewController {
@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
     NSArray *occupation;
     NSArray *salary;
     NSArray *image;
+    NSArray<Programmer *> *programmers;
+
     
 }
 

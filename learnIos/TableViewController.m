@@ -8,7 +8,7 @@
 
 #import "TableViewController.h"
 #import "DetailViewController.h"
-
+#import "Programmer.h"
 @interface TableViewController ()
 
 @end
@@ -21,6 +21,11 @@
     occupation =@[@"Java", @"Swift", @"JS"];
     salary = @[@"1000",@"1000", @"1000"];
     image = @[@"bart.png",@"bart.png",@"bart.png"];
+    programmers = @[
+    [[Programmer alloc] initWithProgrammer:@"programmer 1" occupation:@"test" salary:1000],
+    [[Programmer alloc] initWithProgrammer:@"programmer 2" occupation:@"efwf" salary:1000]
+    ];
+ 
     
     [[self navigationItem] setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
 }
@@ -32,15 +37,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return title.count;
+    return programmers.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.cellTitle.text =title[indexPath.row];
-    cell.occupation.text = occupation[indexPath.row];
+    cell.cellTitle.text =programmers[indexPath.row].name;
+    cell.occupation.text = programmers[indexPath.row].occupation;
     cell.imageView.image = [UIImage imageNamed:image[indexPath.row]];
         // Configure the cell...
     
