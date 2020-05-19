@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		560CCF7924745B00002557ED /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560CCF7824745B00002557ED /* TableViewController.m */; };
+		560CCF7C24745B47002557ED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 560CCF7B24745B47002557ED /* TableViewCell.m */; };
+		560CCFA424746C9F002557ED /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 560CCFA324746C9F002557ED /* SceneDelegate.m */; };
+		560CCFA724746EC1002557ED /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 560CCFA624746EC0002557ED /* DetailViewController.m */; };
 		567F33092471D7B500D53999 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F33082471D7B500D53999 /* AppDelegate.m */; };
-		567F330C2471D7B500D53999 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F330B2471D7B500D53999 /* SceneDelegate.m */; };
-		567F330F2471D7B500D53999 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567F330E2471D7B500D53999 /* ViewController.m */; };
 		567F33122471D7B500D53999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567F33102471D7B500D53999 /* Main.storyboard */; };
 		567F33142471D7B700D53999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567F33132471D7B700D53999 /* Assets.xcassets */; };
 		567F33172471D7B700D53999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567F33152471D7B700D53999 /* LaunchScreen.storyboard */; };
@@ -28,13 +30,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		560CCF7724745B00002557ED /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		560CCF7824745B00002557ED /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		560CCF7A24745B47002557ED /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		560CCF7B24745B47002557ED /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		560CCFA224746C9F002557ED /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneDelegate.h; path = ../../../.Trash/SceneDelegate.h; sourceTree = "<group>"; };
+		560CCFA324746C9F002557ED /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SceneDelegate.m; path = ../../../.Trash/SceneDelegate.m; sourceTree = "<group>"; };
+		560CCFA524746EC0002557ED /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		560CCFA624746EC0002557ED /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		567F33042471D7B500D53999 /* learnIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = learnIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		567F33072471D7B500D53999 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		567F33082471D7B500D53999 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		567F330A2471D7B500D53999 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		567F330B2471D7B500D53999 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		567F330D2471D7B500D53999 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		567F330E2471D7B500D53999 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		567F33112471D7B500D53999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		567F33132471D7B700D53999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		567F33162471D7B700D53999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,17 +90,21 @@
 		567F33062471D7B500D53999 /* learnIos */ = {
 			isa = PBXGroup;
 			children = (
+				560CCFA224746C9F002557ED /* SceneDelegate.h */,
+				560CCFA324746C9F002557ED /* SceneDelegate.m */,
 				567F33072471D7B500D53999 /* AppDelegate.h */,
 				567F33082471D7B500D53999 /* AppDelegate.m */,
-				567F330A2471D7B500D53999 /* SceneDelegate.h */,
-				567F330B2471D7B500D53999 /* SceneDelegate.m */,
-				567F330D2471D7B500D53999 /* ViewController.h */,
-				567F330E2471D7B500D53999 /* ViewController.m */,
+				560CCF7724745B00002557ED /* TableViewController.h */,
+				560CCF7824745B00002557ED /* TableViewController.m */,
+				560CCF7A24745B47002557ED /* TableViewCell.h */,
+				560CCF7B24745B47002557ED /* TableViewCell.m */,
 				567F33102471D7B500D53999 /* Main.storyboard */,
 				567F33132471D7B700D53999 /* Assets.xcassets */,
 				567F33152471D7B700D53999 /* LaunchScreen.storyboard */,
 				567F33182471D7B700D53999 /* Info.plist */,
 				567F33192471D7B700D53999 /* main.m */,
+				560CCFA524746EC0002557ED /* DetailViewController.h */,
+				560CCFA624746EC0002557ED /* DetailViewController.m */,
 			);
 			path = learnIos;
 			sourceTree = "<group>";
@@ -208,10 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				567F330F2471D7B500D53999 /* ViewController.m in Sources */,
 				567F33092471D7B500D53999 /* AppDelegate.m in Sources */,
 				567F331A2471D7B700D53999 /* main.m in Sources */,
-				567F330C2471D7B500D53999 /* SceneDelegate.m in Sources */,
+				560CCFA424746C9F002557ED /* SceneDelegate.m in Sources */,
+				560CCF7C24745B47002557ED /* TableViewCell.m in Sources */,
+				560CCF7924745B00002557ED /* TableViewController.m in Sources */,
+				560CCFA724746EC1002557ED /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
