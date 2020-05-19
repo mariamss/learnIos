@@ -17,11 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = self.detailModal[0];
-    self.detailTitle.text = self.detailModal[0];
-    self.detailOccupation.text= self.detailModal[1];
-    self.detailSalary.text = self.detailModal[2];
-    self.detailImage.image = [UIImage imageNamed:self.detailModal[3]];
+    self.navigationItem.title = self.programmer.name;
+    self.detailTitle.text = self.programmer.name;
+    self.detailOccupation.text= self.programmer.occupation;
+    NSString* salaryString = [NSString stringWithFormat:@"%i", self.programmer.salary];
+    self.detailSalary.text = salaryString;
+    self.detailImage.image = [UIImage imageNamed:self.programmer.image];
     
 }
 

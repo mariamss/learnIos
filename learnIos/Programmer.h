@@ -11,10 +11,12 @@
 
 @property(nonatomic, strong) NSString *name;
 @property(nonatomic, strong) NSString *occupation;
+@property(nonatomic, strong) NSString *image;
 @property int salary;
 
 -(id)initWithProgrammer:(NSString *)name
-               occupation:(NSString*)occupation
-             salary:(int)salary;
+                occupation:(NSString*)occupation
+                salary:(int)salary
+                image:(NSString*)image;
 
 @end

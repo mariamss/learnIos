@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Programmer.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailViewController : UIViewController
 
-@property(strong,nonatomic) NSArray *detailModal;
+@property(strong,nonatomic) Programmer *programmer;
 @property (weak, nonatomic) IBOutlet UIImageView *detailImage;
 @property (weak, nonatomic) IBOutlet UILabel *detailTitle;
 @property (weak, nonatomic) IBOutlet UILabel *detailOccupation;

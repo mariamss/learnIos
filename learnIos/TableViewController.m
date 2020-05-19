@@ -17,15 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    title = @[@"John", @"Jane",@"Joe"];
-    occupation =@[@"Java", @"Swift", @"JS"];
-    salary = @[@"1000",@"1000", @"1000"];
-    image = @[@"bart.png",@"bart.png",@"bart.png"];
     programmers = @[
-    [[Programmer alloc] initWithProgrammer:@"programmer 1" occupation:@"test" salary:1000],
-    [[Programmer alloc] initWithProgrammer:@"programmer 2" occupation:@"efwf" salary:1000]
+    [[Programmer alloc] initWithProgrammer:@"test 1" occupation:@"someth" salary:2000 image:@"bart.png"],
+    [[Programmer alloc] initWithProgrammer:@"test 2" occupation:@"someth 2" salary:1000 image:@"bart.png"],
     ];
- 
     
     [[self navigationItem] setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
 }
@@ -46,7 +41,7 @@
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     cell.cellTitle.text =programmers[indexPath.row].name;
     cell.occupation.text = programmers[indexPath.row].occupation;
-    cell.imageView.image = [UIImage imageNamed:image[indexPath.row]];
+    cell.imageView.image = [UIImage imageNamed:programmers[indexPath.row].image];
         // Configure the cell...
     
     return cell;
@@ -94,12 +89,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSLog(@"tapped");
+
     if([[segue identifier] isEqualToString:@"showDetail"]){
+        printf("inside segue");
         DetailViewController *detailView = [segue destinationViewController];
         NSIndexPath *myIndexPath =[self.tableView indexPathForSelectedRow];
-        
         int row =(int) [myIndexPath row];
-        detailView.detailModal= @[title[row],occupation[row],salary[row], image[row]];
+        detailView.programmer= programmers[row];
     }
 }
 

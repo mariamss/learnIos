@@ -11,10 +11,11 @@
 
 @implementation Programmer
 
--(id)initWithProgrammer:(NSString *)name occupation:(NSString *)occupation salary:(int)salary  {
+-(id)initWithProgrammer:(NSString *)name occupation:(NSString *)occupation salary:(int)salary image:(NSString *)image    {
     self.name = name;
     self.occupation = occupation;
     self.salary = salary;
+    self.image = image;
     return self;
 }
 @end

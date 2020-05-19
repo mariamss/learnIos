@@ -12,10 +12,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TableViewController : UITableViewController {
-    NSArray *title;
-    NSArray *occupation;
-    NSArray *salary;
-    NSArray *image;
     NSArray<Programmer *> *programmers;
 
     
