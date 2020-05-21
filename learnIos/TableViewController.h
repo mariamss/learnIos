@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "TableViewCell.h"
 #import "Programmer.h"
+#include "ModalViewController.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TableViewController : UITableViewController {
-    NSArray<Programmer *> *programmers;
-
-    
+    NSMutableArray<Programmer *> *programmers;
 }
-
+- (IBAction)showModal:(id)sender;
 @end
 
 NS_ASSUME_NONNULL_END

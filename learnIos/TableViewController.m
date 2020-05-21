@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "DetailViewController.h"
 #import "Programmer.h"
+
 @interface TableViewController ()
 
 @end
@@ -17,10 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    programmers = @[
-    [[Programmer alloc] initWithProgrammer:@"test 1" occupation:@"someth" salary:2000 image:@"bart.png"],
-    [[Programmer alloc] initWithProgrammer:@"test 2" occupation:@"someth 2" salary:1000 image:@"bart.png"],
-    ];
+    programmers = [NSMutableArray arrayWithArray:@[
+        [[Programmer alloc] initWithProgrammer:@"Joe" occupation:@"SWIFT" salary:2000 image:@"bart.png"],
+        [[Programmer alloc] initWithProgrammer:@"Jane" occupation:@"Java" salary:1000 image:@"holmer.png"],
+    ]];
     
     [[self navigationItem] setBackBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil]];
 }
@@ -39,60 +40,42 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.cellTitle.text =programmers[indexPath.row].name;
-    cell.occupation.text = programmers[indexPath.row].occupation;
-    cell.imageView.image = [UIImage imageNamed:programmers[indexPath.row].image];
-        // Configure the cell...
+    Programmer *currentProgrammer = programmers[indexPath.row];
+    
+    cell.cellTitle.text =currentProgrammer.name;
+    cell.occupation.text = currentProgrammer.occupation;
+    cell.imageView.image = [UIImage imageNamed:currentProgrammer.image];
     
     return cell;
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [programmers removeObjectAtIndex:[indexPath row]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+   } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+       [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    NSLog(@"tapped");
 
     if([[segue identifier] isEqualToString:@"showDetail"]){
-        printf("inside segue");
         DetailViewController *detailView = [segue destinationViewController];
         NSIndexPath *myIndexPath =[self.tableView indexPathForSelectedRow];
         int row =(int) [myIndexPath row];
@@ -100,5 +83,41 @@
     }
 }
 
+- (Programmer *)generateNewProgramer:( NSArray *)fields {
+       NSString *name=[fields[0] text];
+       NSString *occupation = [fields[1] text];
+       NSString *salaryString = [fields[2] text];
+       int salary=[salaryString intValue];
+       Programmer * newProgrammer =[[Programmer alloc] initWithProgrammer:name occupation:occupation salary:salary image:@"bart.png"];
+        return newProgrammer;
 
+}
+
+
+- (IBAction)showModal:(id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Add programmer" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Name";
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+         textField.placeholder = @"Occupation";
+     ;
+     }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+          textField.placeholder = @"Salary";
+      }];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSArray *fields =[alertController textFields];
+        Programmer * newProgrammer =[self generateNewProgramer:fields];
+        [self->programmers addObject:newProgrammer];
+        NSIndexPath *rowIndex = [NSIndexPath indexPathForRow:self->programmers.count-1 inSection:0] ;
+        [self tableView:self.tableView commitEditingStyle:UITableViewCellEditingStyleInsert forRowAtIndexPath:rowIndex];
+    
+    }];
+    
+    [alertController addAction:confirmAction];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {}];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 @end

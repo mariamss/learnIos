@@ -79,20 +79,23 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Programmers" id="DQj-5t-HHY">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="w0r-To-3vu">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fDN-cd-s6g">
-                                <rect key="frame" x="311" y="7" width="83" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="67z-2A-JD9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bgm-lV-6ry">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add">
                                     <color key="titleColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="showModal:" destination="mjN-Pa-OWG" eventType="touchUpInside" id="Ncj-bm-Zda"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rNq-oE-bzn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="158.77061469265368"/>
+            <point key="canvasLocation" x="843.47826086956525" y="158.1521739130435"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="X9s-Fo-6MB">
